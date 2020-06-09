@@ -1,0 +1,31 @@
+import { Endpoints } from "../Enums/Endpoints";
+import { IColor } from "../../Models/IColor";
+import { IColor2D } from "../../Models/IColor2D";
+import { CombinationStrategies } from "../../Models/Enums/CombinationStrategies";
+import { ReadabilityPolicies } from "../../Models/Enums/ReadabilityPolicies";
+import { ReadabilityDisplayStrategies } from "../../Models/Enums/ReadabilityDisplayStrategies";
+import { GenerationStrategies } from "../../Models/Enums/GenerationStrategies";
+import { ColorBehaviors } from "../../Models/Enums/ColorBehaviors";
+import { SuggestionStrategies } from "../../Models/Enums/SuggestionStrategies";
+import { NamedOperations } from "../../Models/Enums/NamedOperations";
+import { ISize } from "../../Models/ISize";
+
+export type PalettePayload = {
+  [Endpoints.InitPalette]: { };
+  [Endpoints.CreatePalette]: { };
+  [Endpoints.DeletePalette]: { };
+  [Endpoints.AddPaletteColor]: { color: IColor; };
+  [Endpoints.RemovePaletteColor]: {color: IColor; };
+  [Endpoints.SetPaletteColor]: { color: IColor; };
+  [Endpoints.SuggestPaletteColors]: { };
+  [Endpoints.SetColor2D]: {color2D: IColor2D; };
+  [Endpoints.SetCombinationStrategy]: { combinationStrategy: CombinationStrategies };
+  [Endpoints.SetReadabilityPolicy]: { readabilityPolicy: ReadabilityPolicies };
+  [Endpoints.SetReadabilityDisplayStrategy]: { readabilityDisplayStrategy: ReadabilityDisplayStrategies };
+  [Endpoints.SetGenerationStrategy]: { generationStrategy: GenerationStrategies };
+  [Endpoints.SetColorBehavior]: { colorBehavior: ColorBehaviors };
+  [Endpoints.SetSuggestionStrategy]: { suggestionStrategy: SuggestionStrategies, namedOperation: NamedOperations };
+  [Endpoints.SetSuggestionSize]: { size: ISize };
+  [Endpoints.SetTemplate]: { template: string };
+  [Endpoints.SetElementSize]: { size: ISize };  
+};

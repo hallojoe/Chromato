@@ -1,0 +1,158 @@
+@import "_reboot.scss";
+@mixin checkers($size: 50px, $contrast: 0.07) {
+  $checkerColor: rgba(#000, $contrast);
+  $angle: 45deg;
+  $tp: 25%;
+
+  background-image: linear-gradient($angle, $checkerColor $tp, transparent $tp),
+    linear-gradient(-$angle, $checkerColor $tp, transparent $tp),
+    linear-gradient($angle, transparent 3 * $tp, $checkerColor 3 * $tp),
+    linear-gradient(-$angle, transparent 3 * $tp, $checkerColor 3 * $tp);
+  background-size: $size $size;
+  background-position: 0 0, 0 $size/2, $size/2 -1 * $size/2, -1 * $size/2 0;
+}
+@mixin background-checkered($color: rgba(0, 0, 0, .25), $size: 10px, $backgroundAttachment: fixed) {      
+  // @media (prefers-color-scheme: dark) {
+  //   body {
+  //     background-color: #000 !important;
+  //   }
+  // }
+  // @media (prefers-color-scheme: light) {
+  //   body {
+  //     background-color: #fff !important;
+  //   }
+  // }
+  $sizeX2: $size * 2;
+    background-image: 
+        linear-gradient(45deg, $color 25%, blue 25%),
+        linear-gradient(-45deg, $color 25%, blue 25%), 
+        linear-gradient(45deg, blue 75%, $color 75%),
+        linear-gradient(-45deg, blue 75%, $color 75%);
+  background-size: $sizeX2 $sizeX2;
+  background-position: 0 0, 0 #{$size}, #{$size} #{-$size}, #{-$size} 0;
+  background-attachment: $backgroundAttachment;    
+  background-color: white;
+}
+
+:root {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 14px;
+}
+body {
+  
+  @include checkers();
+  svg {
+    display: block;
+    width: 100%;
+  }
+}
+
+.f::after {
+  content: "";
+  clear: both;
+  display: table;
+  padding: 0;
+  margin: 0;
+}
+.x {
+  width: 8rem;
+}
+
+.color {
+  position: relative;
+  float: left;
+  width: 2rem;
+  height: 2rem;
+  // border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  &.selected {
+    border: 2px dotted red;
+  }
+
+  > .background {
+    position: absolute;
+    left:0rem;
+    top:0rem;
+    background-color: var(--backgroundColor);
+    width: 2rem;
+    height:2rem;
+    // border-radius: 50%;
+  }
+
+  > .foreground {
+    position: absolute;
+    right:.5rem;
+    bottom:.5rem;
+    background-color: var(--foregroundColor);
+    width: 1rem;
+    height: 1rem;
+    // border-radius: 50%;
+    margin: 0 auto;
+  }
+
+
+}
+
+
+
+.palette {
+  border: 1px solid #ccc;
+  background-color: transparent;
+  .title {
+    background-color: #f0f0f0;
+  }
+  .body {
+    
+    .label {
+      font-size: .75rem;
+      color: #555;
+    }
+
+  }
+}
+
+
+.radio, .checkbox {
+
+  .radio, .checkbox {
+    padding-left:1.5rem;
+  }
+
+  small {
+    display: block;
+    padding-left:1.5rem;
+    opacity: .8;
+  }
+
+}
+
+.sizeInput {
+  display: flex;
+}
+
+.unsafeHtmlElement {
+  position: relative;
+  width:100%;
+  height:100%;
+
+  > * {
+    width:100%;
+    height:100%;
+    display: block;
+    background-color: var(--backgroundColor);
+    // path, rect, circle, polygon, text {
+    //   fill: var(--foregroundColor);
+    // }
+  }
+
+
+
+}
+
+pre {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  font-size: .75rem;
+  overflow: hidden;
+}
