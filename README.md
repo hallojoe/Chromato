@@ -1,8 +1,12 @@
 # Chromato
-A color thing
-
-Created using create-react-app.
+A color thing.
 
 ## Install
 
-`cd ./chromato-app` then `npm start` 
+ - Clone repo
+ - navigate to`/chromato-app` 
+ - run `npm start` 
+
+## Demo
+
+https://hallojoe.github.io/Chromato/chromato-app/build/index.html
