@@ -1,5 +1,5 @@
 {
-  "homepage": "http://hallojoe.github.io/Chromato/chromato-app/",
+  "homepage": "http://hallojoe.github.io/Chromato/chromato-app/build/",
   "name": "chromato-app",
   "version": "0.1.0",
   "private": true,
