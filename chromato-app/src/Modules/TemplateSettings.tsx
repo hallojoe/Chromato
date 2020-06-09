@@ -141,26 +141,9 @@ const TemplateSettings: React.FC = () => {
 
 
       <div>
-      <FileInput multiple={true} typePattern={".svg"} onChange={ processFile}>
-          add svg
-      </FileInput>          
-
-
+        <FileInput multiple={true} typePattern={".svg"} onChange={ processFile}>Use local svg(Gamma state)</FileInput>          
       </div>
 
-
-      <div>
-
-      <pre>{ defaultHtmlTemplate}</pre>
-
-      <pre>{ defaultSvgTemplate}</pre>
-
-        <textarea ref={ customTemplateTextarea } defaultValue={defaultSvgTemplate}>
-        </textarea>
-
-        <button onClick={ (event) => {event.preventDefault(); return handleTemplateChange(nike)}}>Set template</button>
-                  
-      </div>
 
       </form>
     </div>
