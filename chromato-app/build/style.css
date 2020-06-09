@@ -1,0 +1,114 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: "black";
+}
+
+:root {
+  font-family: "Major Mono Display", monospace;
+  font-size: 14px;
+}
+
+body {
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.07) 25%, transparent 25%), linear-gradient(-45deg, rgba(0, 0, 0, 0.07) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.07) 75%), linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.07) 75%);
+  background-size: 50px 50px;
+  background-position: 0 0, 0 25px, 25px -25px, -25px 0;
+}
+body svg {
+  display: block;
+  width: 100%;
+}
+
+.f::after {
+  content: "";
+  clear: both;
+  display: table;
+  padding: 0;
+  margin: 0;
+}
+
+.x {
+  width: 8rem;
+}
+
+.color {
+  position: relative;
+  float: left;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+.color.selected {
+  border: 2px dotted red;
+}
+.color > .background {
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+  background-color: var(--backgroundColor);
+  width: 2rem;
+  height: 2rem;
+}
+.color > .foreground {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  background-color: var(--foregroundColor);
+  width: 1rem;
+  height: 1rem;
+  margin: 0 auto;
+}
+
+.palette {
+  border: 1px solid #ccc;
+  background-color: transparent;
+}
+.palette .title {
+  background-color: #f0f0f0;
+}
+.palette .body .label {
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.radio .radio, .radio .checkbox, .checkbox .radio, .checkbox .checkbox {
+  padding-left: 1.5rem;
+}
+.radio small, .checkbox small {
+  display: block;
+  padding-left: 1.5rem;
+  opacity: 0.8;
+}
+
+.sizeInput {
+  display: flex;
+}
+
+.unsafeHtmlElement {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.unsafeHtmlElement > * {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: var(--backgroundColor);
+}
+
+pre {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  font-size: 0.75rem;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=style.css.map */
