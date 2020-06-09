@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Chromato/chromato-app/build/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/Chromato/chromato-app/build/static/js/main.ce8b8587.chunk.js",
-    "main.js.map": "/Chromato/chromato-app/build/static/js/main.ce8b8587.chunk.js.map",
+    "main.js": "/Chromato/chromato-app/build/static/js/main.c236fa2d.chunk.js",
+    "main.js.map": "/Chromato/chromato-app/build/static/js/main.c236fa2d.chunk.js.map",
     "runtime-main.js": "/Chromato/chromato-app/build/static/js/runtime-main.26b759ef.js",
     "runtime-main.js.map": "/Chromato/chromato-app/build/static/js/runtime-main.26b759ef.js.map",
     "static/js/2.1fc26d87.chunk.js": "/Chromato/chromato-app/build/static/js/2.1fc26d87.chunk.js",
     "static/js/2.1fc26d87.chunk.js.map": "/Chromato/chromato-app/build/static/js/2.1fc26d87.chunk.js.map",
     "index.html": "/Chromato/chromato-app/build/index.html",
-    "precache-manifest.7b3117bf1b1d42127970b848028ce514.js": "/Chromato/chromato-app/build/precache-manifest.7b3117bf1b1d42127970b848028ce514.js",
+    "precache-manifest.7095135533cc7f07928a948e46bc4926.js": "/Chromato/chromato-app/build/precache-manifest.7095135533cc7f07928a948e46bc4926.js",
     "service-worker.js": "/Chromato/chromato-app/build/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/Chromato/chromato-app/build/static/css/main.5ecd60fb.chunk.css.map",
     "static/js/2.1fc26d87.chunk.js.LICENSE.txt": "/Chromato/chromato-app/build/static/js/2.1fc26d87.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.26b759ef.js",
     "static/js/2.1fc26d87.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.ce8b8587.chunk.js"
+    "static/js/main.c236fa2d.chunk.js"
   ]
 }
