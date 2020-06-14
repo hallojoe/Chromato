@@ -65,7 +65,7 @@ const TemplateSettings: React.FC = () => {
     setNumericInputConfiguration(copyOfConfiguration);
   };  
 
-    
+  // todo: make sane and wide
   const scanColorCodes = (html: string): string[] => {
     const pattern = /(?:#[a-fA-F0-9]{3,6}|rgba?\([^\)]+\))/gm;
     let list = html.match(pattern);
@@ -92,28 +92,19 @@ const TemplateSettings: React.FC = () => {
     html = html.split(darkestColor.input).join("var(--backgroundColor)")
     html = html.split(lightestColor.input).join("var(--foregroundColor)");
 
-
     return html;
 
-
-
-    
   };
 
-
+  // todo: remove
   const removeColorCodes = (html: string): string => {
     scanColorCodes(html).forEach(v => html = html.replace(v, ""));
     return html;
   };
- 
-  
+   
   const processFile = (text: string): void => {
-
     handleTemplateChange(text);
-
   };
-
-
 
   if(!state.colorPalette) throw Error("state.colorPalette cannot be empty!")
 
@@ -121,30 +112,24 @@ const TemplateSettings: React.FC = () => {
     <div>     
       <h4>Template</h4>
       <p>Set template</p>
-
       <form>
-
-
       <div>
-        <p>Elements size. This size will be reserved for each <q>Color element</q>. Overflow is hidden, som make sure template size comply with this. </p>
-        <div style={{display: "flex"}}>
-          <input type="checkbox" 
-              checked={numericInputConfiguration.constrain} 
-              onChange={ handleElementSizeContraintChange } />
-          <SizeInput                     
-            configuration={numericInputConfiguration}
-            value={state.colorPalette.elementSize} 
-            onDisplay={(value: number) => Math.round(value)}              
-            onChange={handleElementSizeChange} />   
+          <FileInput multiple={true} typePattern={".svg"} onChange={ processFile}>Use local svg</FileInput>          
         </div>
-      </div>
+        <div>
+          <p>Size reserved for each <q>Color element</q>. Overflow is hidden, som make sure template proportions comply with this. </p>
 
-
-      <div>
-        <FileInput multiple={true} typePattern={".svg"} onChange={ processFile}>Use local svg(Gamma state)</FileInput>          
-      </div>
-
-
+          <div style={{display: "flex"}}>
+            <input type="checkbox" 
+                checked={numericInputConfiguration.constrain} 
+                onChange={ handleElementSizeContraintChange } />
+            <SizeInput                     
+              configuration={numericInputConfiguration}
+              value={state.colorPalette.elementSize} 
+              onDisplay={(value: number) => Math.round(value)}              
+              onChange={handleElementSizeChange} />   
+          </div>
+        </div>
       </form>
     </div>
   );

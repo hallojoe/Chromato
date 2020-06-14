@@ -26,23 +26,16 @@ import { Color } from "../../Models/Impl/Color";
 
 import { Endpoints } from "../Enums/Endpoints";
 import { PaletteActions } from "../Actions/PaletteActions";
-import { ActiveColorActions } from "../Actions/ActiveColorActions";
 
-export const paletteReducer = (state: IPalette, action: PaletteActions | ActiveColorActions ): IPalette => {
+export const paletteReducer = (state: IPalette, action: PaletteActions): IPalette => {
 
   const copyOfState: IPalette = copy(state);
 
-  const getColor = (value: IColor | undefined) : IColor | undefined => {
+  const getColor = (value: IColor | undefined) : IColor | undefined => { 
     if(!value) return undefined;
     const index = copyOfState.value.findIndex(c => c.value === value.value);
     return copyOfState.value[index];    
   }  
-
-  const setCssVariable = (propertyName: string, value: string, element?:  HTMLElement): void => {
-    if(!element) element = document?.body;
-    if(!element?.style || !propertyName || !value) return;
-    element.style.setProperty(propertyName, value);
-  };
 
   const generateColorSets = (color2D: IColor2D): Array<IGeneratedColorSet> => {
 
@@ -125,9 +118,6 @@ export const paletteReducer = (state: IPalette, action: PaletteActions | ActiveC
 
       copyOfState.selected.one = action.payload.color;
 
-      // setCssVariable("--backgroundColor", action.payload.color.value);
-      // setCssVariable("--foregroundColor", action.payload.color.value);
-
       copyOfState.suggestions = [];
 
       combine();
@@ -136,17 +126,11 @@ export const paletteReducer = (state: IPalette, action: PaletteActions | ActiveC
 
     case Endpoints.SetColor2D:      
 
-      // setCssVariable("--foregroundColor", action.payload.color2D.two.value);
-      // setCssVariable("--backgroundColor", action.payload.color2D.two.value);
-
-
-      copyOfState.selected =  action.payload.color2D;
+    copyOfState.selected =  action.payload.color2D;
 
       copyOfState.suggestions = generateColorSets(copyOfState.selected);
 
-
       return copyOfState;
-
 
     case Endpoints.SetCombinationStrategy:      
 
@@ -155,7 +139,6 @@ export const paletteReducer = (state: IPalette, action: PaletteActions | ActiveC
       combine();
 
       return copyOfState;
-
 
     case Endpoints.SetReadabilityPolicy:      
 
