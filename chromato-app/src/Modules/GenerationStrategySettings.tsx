@@ -39,7 +39,7 @@ const GenerationStrategySettings: React.FC = () => {
               checked={state.colorPalette?.generationStrategy === GenerationStrategies.All } 
               onChange={() => handleGenerationStrategyChange(GenerationStrategies.All)} />
             All
-            <small>Show all color combinations. This may rape your DOM, but it lookool.</small>
+            <small>Show all color combinations. Many colors will slow down your experience, but it lookool.</small>
           </label>
         </div>
       </form>
