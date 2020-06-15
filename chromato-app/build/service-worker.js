@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Chromato/chromato-app/build/precache-manifest.7095135533cc7f07928a948e46bc4926.js"
+  "/Chromato/chromato-app/build/precache-manifest.c25db6ee54c1f24b26424acc9dad6773.js"
 );
 
 self.addEventListener('message', (event) => {
